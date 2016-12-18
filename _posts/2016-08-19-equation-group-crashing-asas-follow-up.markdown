@@ -2,8 +2,7 @@
 author: XORcat
 comments: true
 date: 2016-08-19 02:56:37+00:00
-layout: post
-link: https://xorcat.net/2016/08/19/equation-group-crashing-asas-follow-up/
+layout: single
 slug: equation-group-crashing-asas-follow-up
 title: Equation Group - Crashing ASAs + Follow Up
 wordpress_id: 377

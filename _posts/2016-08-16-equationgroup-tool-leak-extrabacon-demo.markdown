@@ -2,8 +2,7 @@
 author: XORcat
 comments: true
 date: 2016-08-16 11:10:15+00:00
-layout: post
-link: https://xorcat.net/2016/08/16/equationgroup-tool-leak-extrabacon-demo/
+layout: single
 slug: equationgroup-tool-leak-extrabacon-demo
 title: EquationGroup Tool Leak - ExtraBacon Demo
 wordpress_id: 291

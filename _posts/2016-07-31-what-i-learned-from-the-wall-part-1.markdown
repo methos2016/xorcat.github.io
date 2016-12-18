@@ -2,8 +2,7 @@
 author: XORcat
 comments: true
 date: 2016-07-31 01:55:59+00:00
-layout: post
-link: https://xorcat.net/2016/07/31/what-i-learned-from-the-wall-part-1/
+layout: single
 slug: what-i-learned-from-the-wall-part-1
 title: What I Learned From "The Wall Part 1"
 wordpress_id: 35

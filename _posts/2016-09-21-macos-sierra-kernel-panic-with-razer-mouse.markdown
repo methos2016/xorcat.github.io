@@ -2,8 +2,7 @@
 author: XORcat
 comments: true
 date: 2016-09-21 07:05:37+00:00
-layout: post
-link: https://xorcat.net/2016/09/21/macos-sierra-kernel-panic-with-razer-mouse/
+layout: single
 slug: macos-sierra-kernel-panic-with-razer-mouse
 title: MacOS Sierra Kernel Panic with Razer Mouse
 wordpress_id: 392

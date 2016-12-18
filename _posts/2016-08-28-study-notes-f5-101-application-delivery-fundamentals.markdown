@@ -2,8 +2,7 @@
 author: XORcat
 comments: true
 date: 2016-08-28 09:42:53+00:00
-layout: post
-link: https://xorcat.net/2016/08/28/study-notes-f5-101-application-delivery-fundamentals/
+layout: single
 slug: study-notes-f5-101-application-delivery-fundamentals
 title: Study Notes - F5 101 - Application Delivery Fundamentals
 wordpress_id: 387
