@@ -30,7 +30,16 @@
         <a href="{{ post.url | absolute_url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
-    <p class="page__meta">{{ post.date | date: '%Y-%M-%d' }}</p>
+    <p class="page__meta">
+	{% assign day = post.date | date: "%-d"  %}
+	{% case day %}
+	  {% when '1' or '21' or '31' %}{{ day }}st
+	  {% when '2' or '22' %}{{ day }}nd
+	  {% when '3' or '23' %}{{ day }}rd
+	  {% else %}{{ day }}th
+	{% endcase %}
+	{{ post.date | date: 'of %B, %Y' }}
+	</p>
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
