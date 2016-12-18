@@ -8,7 +8,7 @@
 # Site Settings
 locale                   : "en"
 title                    : "XORcat"
-title_separator          : ""
+title_separator          : "-"
 name                     : ""
 description              : "My thoughts on tech, and my journey in infosec"
 url                      : "https://xorcat.github.io"
@@ -18,7 +18,7 @@ teaser                   : # path of fallback teaser image, e.g. "/assets/images
  breadcrumbs             : true # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  provider               : "staticman" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -81,7 +81,7 @@ author:
   avatar           : "assets/images/avatar.jpg"
   bio              : "ASCII cat"
   location         : "Brisbane, Australia"
-  email            :
+  email            : "xorcat@riseup.net"
   uri              :
   bitbucket        :
   codepen          :
@@ -89,7 +89,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "xorcat"
   google_plus      :
   keybase          :
   instagram        :
@@ -135,8 +135,6 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
 keep_files:
   - .git
   - .svn
