@@ -5,6 +5,7 @@ date: 2016-07-31 01:55:59+00:00
 layout: single
 slug: what-i-learned-from-the-wall-part-1
 title: What I Learned From "The Wall Part 1"
+excerpt: My first foray into vulnhub VM write-ups
 wordpress_id: 35
 categories:
 - InfoSec

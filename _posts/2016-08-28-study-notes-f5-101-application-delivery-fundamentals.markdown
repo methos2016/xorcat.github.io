@@ -5,6 +5,7 @@ date: 2016-08-28 09:42:53+00:00
 layout: single
 slug: study-notes-f5-101-application-delivery-fundamentals
 title: Study Notes - F5 101 - Application Delivery Fundamentals
+excerpt: Let's become certified together!
 wordpress_id: 387
 categories:
 - Networking

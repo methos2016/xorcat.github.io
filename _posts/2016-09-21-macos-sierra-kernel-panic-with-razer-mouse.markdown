@@ -5,6 +5,7 @@ date: 2016-09-21 07:05:37+00:00
 layout: single
 slug: macos-sierra-kernel-panic-with-razer-mouse
 title: MacOS Sierra Kernel Panic with Razer Mouse
+excerpt: Damn 3rd party kexts!
 wordpress_id: 392
 categories:
 - Tech

@@ -5,6 +5,7 @@ date: 2016-08-16 11:10:15+00:00
 layout: single
 slug: equationgroup-tool-leak-extrabacon-demo
 title: EquationGroup Tool Leak - ExtraBacon Demo
+excerpt: Someone found some toys...
 wordpress_id: 291
 categories:
 - InfoSec

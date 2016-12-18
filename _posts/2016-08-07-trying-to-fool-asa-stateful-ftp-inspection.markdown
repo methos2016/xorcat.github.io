@@ -5,6 +5,7 @@ date: 2016-08-07 02:28:02+00:00
 layout: single
 slug: trying-to-fool-asa-stateful-ftp-inspection
 title: Trying to fool ASA stateful FTP inspection
+excerpt: Fool me once...
 wordpress_id: 224
 categories:
 - InfoSec
