@@ -227,6 +227,15 @@
         </li>
       {% endif %}
 
+      {% if author.pgp %}
+		<li>
+		  <a href="{{ author.pgp }}" itemprop="sameAs">
+		    <i class="fa fa-fw fa-lock" aria-hidden="true"</li> PGP
+		  </a>
+		</li>
+      {% endif %}
+
+
       {% include author-profile-custom-links.html %}
     </ul>
   </div>
