@@ -3,7 +3,6 @@ author: XORcat
 comments: true
 date: 2016-12-15 01:30:35+00:00
 layout: post
-link: https://xorcat.net/2016/12/15/a-journey-in-troubleshooting-mac-apps/
 slug: a-journey-in-troubleshooting-mac-apps
 title: A Journey in Troubleshooting Mac Apps
 wordpress_id: 399
