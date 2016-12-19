@@ -3,7 +3,7 @@ author: XORcat
 comments: true
 date: 2016-08-19 02:56:37+00:00
 layout: single
-slug: exba-followup
+slug: equation-group-crashing-asas-follow-up
 title: Equation Group - Crashing ASAs + Follow Up
 excerpt: Extra issues caused by Extra Bacon if used improperly
 categories:

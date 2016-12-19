@@ -3,7 +3,7 @@ author: XORcat
 comments: true
 date: 2016-08-16 11:10:15+00:00
 layout: single
-slug: exba-demo
+slug: equationgroup-tool-leak-extrabacon-demo
 title: EquationGroup Tool Leak - ExtraBacon Demo
 excerpt: Someone found some toys...
 categories:

@@ -3,7 +3,7 @@ author: XORcat
 comments: true
 date: 2016-12-15 01:30:35+00:00
 layout: single
-slug: tshooting-mac-apps
+slug: a-journey-in-troubleshooting-mac-apps
 title: A Journey in Troubleshooting Mac Apps
 excerpt: Hopefully you can feel the same relief I did when it's fixed
 categories:
