@@ -73,18 +73,10 @@ As this link suggests, safe mode stops startup items and login items from runnin
 Effectively, this gives you the cleanest possible environment to do your testing in. If you can’t get your app to work here, either your app is corrupted/broken, or you have some more deeply rooted system issues.
 
 Oh, and you can launch safe mode by holding shift while your machine is first booting. Unfortunately, for some reason, that didn’t work for me, and I had to run the following from Terminal before rebooting (as stated on [Apple's Safe Mode page](https://support.apple.com/en-us/HT201262)):
-
     
     sudo nvram boot-args="-x”
 
-
-_Note: If running the above nvram command, you will need to run_
-
-    
-    sudo nvram boot-args=""
-
-
-_after you’re finished in safe mode before rebooting again, otherwise you’ll be stuck in safe mode forever!_
+*Note: If running the above nvram command, you will need to run_ `sudo nvram boot-args=""` _after you’re finished in safe mode before rebooting again, otherwise you’ll be stuck in safe mode forever!*
 
 So, I tried launching Tweetbot from safe mode, and it worked straight away!
 
@@ -115,13 +107,10 @@ In these directories are preference (.plist) files which describe a program that
 These plist files generally have quite user-friendly names so that you can find what you’re looking for fairly easily.
 
 For example:
-
     
     net.tunnelblick.tunnelblick.LaunchAtLogin.plist
 
-
 looks like this:
-
     
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -144,20 +133,15 @@ looks like this:
     </dict>
     </plist>
 
-
 This is the user-specific LaunchAgent plist file for Tunnelblick, the VPN software that I use.
-
     
     /Applications/Tunnelblick.app/Contents/Resources/launchAtLogin.sh
 
-
 is the command that will be run when I log in.
 
-In order to disable any of these items, you can either _sudo rm file.plist_ them, or (the safer way) you could simply
-
+In order to disable any of these items, you can either `sudo rm file.plist` them, or (the safer way) you could simply
     
     mkdir ~/Desktop/tempLaunchFiles; sudo mv file.plist ~/Desktop/tempLaunchFiles
-
 
 to move the suspect file onto your desktop. If you find after doing this and rebooting that your issue isn’t fixed, you can pretty safely restore that .plist to where it came from (or leave it out if you don’t want it!)
 
