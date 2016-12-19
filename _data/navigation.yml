@@ -1,9 +1,9 @@
 # main links
 main:
-    #  - title: "Quick-Start Guide"
-    #url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "About"
     url: /about/
+  - title: "PGP"
+    url: "https://pgp.mit.edu/pks/lookup?op=get&search=0xF2D050D3A528A62C"
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
