@@ -6,7 +6,6 @@ layout: single
 slug: trying-to-fool-asa-stateful-ftp-inspection
 title: Trying to fool ASA stateful FTP inspection
 excerpt: Fool me once...
-wordpress_id: 224
 categories:
 - InfoSec
 tags:
@@ -21,8 +20,6 @@ tags:
 Hi there!
 
 I was doing some CCNA Security study, playing with ASAs, and the ability of the firewall to inspect FTP traffic in order to open ports for [FTP passive mode](http://slacksite.com/other/ftp.html) connections.
-
-<!-- more -->
 
 For example, when I tell my FTP server that I want to connect in passive mode:
 

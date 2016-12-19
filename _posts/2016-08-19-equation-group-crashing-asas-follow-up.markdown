@@ -5,8 +5,7 @@ date: 2016-08-19 02:56:37+00:00
 layout: single
 slug: equation-group-crashing-asas-follow-up
 title: Equation Group - Crashing ASAs + Follow Up
-excerpt: Scary stuff
-wordpress_id: 377
+excerpt: Extra issues caused by Extra Bacon if used improperly
 categories:
 - InfoSec
 tags:
@@ -20,16 +19,17 @@ tags:
 - security
 - ShadowBrokers
 - tech
+header:
+  teaser: "/assets/images/posts/0004-exba-followup/exba-crash.png"
 ---
 
 Hi there!
-
 
 It's been a crazy couple of days, after I wrote my post about breaking into the 8.4(2) ASA with ExtraBacon, others have tested EpicBanana, and various other tools from the dump.
 
 [Cisco has also written their own post](https://blogs.cisco.com/security/shadow-brokers) about EpicBanana and ExtraBacon, confirming the vulnerabilities exist, creating CVEs for them (CVE-2016-6367 and CVE-2016-6366 respectively).
 
-Unfortunately, there is not a software fix for CVE-2016-6366 (ExtraBacon) yet, but Cisco said it is being currently worked on.<!-- more -->
+Unfortunately, there is not a software fix for CVE-2016-6366 (ExtraBacon) yet, but Cisco said it is being currently worked on.
 
 [There has also been mention](https://musalbas.com/2016/08/18/equation-group-benigncertain.html) (by Mustafa Al-Bassam) of a tool in the dump called "BenignCertain", which appears to send a crafted IKE packet to a Cisco PIX v5.2 through to 6.4(4), parse the response, and find the pre-shared key configured for the VPN tunnel.... I've not been able to get it to work on ASA 8.4(2) (ASA is the successor to PIX), and unfortunately I haven't been able to get my hands on a working PIX to test it out properly.
 
@@ -41,13 +41,13 @@ In my lab, I told ExtraBacon to send the ASA 8.4(4) payload if the ASA it was ta
 
 I built an ASA running 9.1(5) (software released in 2014) in my GNS3 lab, aimed my modified ExtraBacon at it, and....
 
-![exba-crash](https://xorcat.net/wp-content/uploads/2016/08/exba-crash.png)
+![exba-crash](/assets/images/posts/0004-exba-followup/exba-crash.png)
 
 The firewall was dead instantly, no traffic being passed. That's scary, right? Right.
 
 Even worse though, is that the firewall didn't even reboot properly! It just sat there like this (I waited over 10 minutes, but it did nothing):
 
-![exba-crash-noreload](https://xorcat.net/wp-content/uploads/2016/08/exba-crash-noreload.png)
+![exba-crash-noreload](/assets/images/posts/0004-exba-followup/exba-crash-noreload.png)
 
 It's possible that my GNS3 ASA is behaving differently to how a real physical ASA would, but I can't tell for sure whether that is the case.
 

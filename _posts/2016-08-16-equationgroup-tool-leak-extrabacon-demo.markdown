@@ -6,7 +6,6 @@ layout: single
 slug: equationgroup-tool-leak-extrabacon-demo
 title: EquationGroup Tool Leak - ExtraBacon Demo
 excerpt: Someone found some toys...
-wordpress_id: 291
 categories:
 - InfoSec
 tags:
@@ -19,7 +18,11 @@ tags:
 - security
 - ShadowBrokers
 - tech
+header:
+  teaser: "/assets/images/posts/0003-exba-demo/bacon.jpg"
 ---
+
+![The Wall ASCII Art](/assets/images/posts/0003-exba-demo/bacon.jpg)
 
 _Note: [In this subsequent post](https://xorcat.net/2016/08/19/equation-group-crashing-asas-follow-up/), I explore the DoS possibilities of this vulnerability (crash ASA, ASA requires manual power cycle to recover)_
 
@@ -28,8 +31,6 @@ Hi there,
 You may have heard that recently (15/08/2016) a group known as Shadow Brokers released what are said to be a bunch of exploits and tools written and used by the NSA.
 
 Two tar were released, one with the password of "theequationgroup", named "eqgrp-free-file.tar.xz.gpg". The other is named "eqgrp-auction-file.tar.xz.gpg", and according to the post where Shadow Brokers broke the news (now removed, but cached [here](https://webcache.googleusercontent.com/search?q=cache:owtq6OBSmgEJ:https://theshadowbrokers.tumblr.com/+&cd=1&hl=en&ct=clnk&gl=us)), they will release the key for this file, which supposedly contains juicier content, to the person who bids the most in their bitcoin auction, which ends at a time of Shadow Brokers' choosing.
-
-<!-- more -->
 
 The files are currently still available for download from [this MEGA link](https://mega.nz/#!zEAU1AQL!oWJ63n-D6lCuCQ4AY0Cv_405hX8kn7MEsa1iLH5UjKU), although I don't know how long it will stay alive, as it was also hosted on GitHub, who tore it down shortly after it being posted.
 
