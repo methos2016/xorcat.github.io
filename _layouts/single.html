@@ -58,8 +58,6 @@ layout: default
     {% endif %}
   </article>
 
-  {% include post_ad.html %}
-
   {% comment %}<!-- only show related on a post page when not disabled -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
     <div class="page__related">
@@ -73,4 +71,7 @@ layout: default
       </div>
     </div>
   {% endif %}
+
+  <center>{% include post_ad.html %}</center>
+
 </div>
