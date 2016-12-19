@@ -16,6 +16,8 @@ header:
   teaser: "/assets/images/posts/0001-the-wall-pt1/ascii_art.png"
 ---
 
+![The Wall ASCII Art](/assets/images/posts/0001-the-wall-pt1/ascii_art.png)
+
 The Wall, as well as being a classic two part album by Pink Floyd, is a vulnerable VM series created by [@Xerubus](https://twitter.com/xerubus) and hosted on [VulnHub](https://www.vulnhub.com/).
 
 I was not able to complete "[The Wall: 1](https://www.vulnhub.com/entry/the-wall-1,130/)" completely on my own. I made it up to gaining SSH access to the box on my own, but got stuck there and essentially gave up, leaning on [Xerubus' own walkthrough of the VM](http://www.mogozobo.com/?p=2848) for the remainder of the challenge.
