@@ -46,6 +46,7 @@ layout: default
         {% elsif page.date %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></p>
         {% endif %}
+        {% include post_ad.html %}
       </footer>
 
       {% if page.share %}{% include social-share.html %}{% endif %}
@@ -71,7 +72,5 @@ layout: default
       </div>
     </div>
   {% endif %}
-
-  {% include post_ad.html %}
 
 </div>
