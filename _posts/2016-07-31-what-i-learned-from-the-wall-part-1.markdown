@@ -5,14 +5,15 @@ date: 2016-07-31 01:55:59+00:00
 layout: single
 slug: what-i-learned-from-the-wall-part-1
 title: What I Learned From "The Wall Part 1"
-excerpt: My first foray into vulnhub VM write-ups
-wordpress_id: 35
+excerpt: What you can learn without finishing a challenge on your own
 categories:
 - InfoSec
 tags:
 - InfoSec
 - tech
 - vulnhub
+header:
+  teaser: /assets/images/posts/0001-the-wall-pt1/ascii_art.png
 ---
 
 The Wall, as well as being a classic two part album by Pink Floyd, is a vulnerable VM series created by [@Xerubus](https://twitter.com/xerubus) and hosted on [VulnHub](https://www.vulnhub.com/).
@@ -36,7 +37,7 @@ Port scans are not everything, sometimes you need to listen for traffic to or fr
 Obviously, the easy tool for this is [tcpdump](http://packetlife.net/media/library/12/tcpdump.pdf).
 
 
-# **2 - Keep an eye out for hashes**
+# 2 - Keep an eye out for hashes
 
 
 I ended up with what appeared to me as just 32 hex characters, that were hinted to be some kind of key. I first tried converting them to ASCII using `echo "hash" | xxd -r -p`, only to get a bunch of garbage characters.
