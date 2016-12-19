@@ -13,7 +13,7 @@ tags:
 - tech
 - vulnhub
 header:
-  teaser: /assets/images/posts/0001-the-wall-pt1/ascii_art.png
+  teaser: "/assets/images/posts/0001-the-wall-pt1/ascii_art.png"
 ---
 
 The Wall, as well as being a classic two part album by Pink Floyd, is a vulnerable VM series created by [@Xerubus](https://twitter.com/xerubus) and hosted on [VulnHub](https://www.vulnhub.com/).
