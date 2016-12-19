@@ -3,7 +3,7 @@ author: XORcat
 comments: true
 date: 2016-08-16 11:10:15+00:00
 layout: single
-slug: equationgroup-tool-leak-extrabacon-demo
+slug: exba-demo
 title: EquationGroup Tool Leak - ExtraBacon Demo
 excerpt: Someone found some toys...
 categories:
@@ -22,7 +22,7 @@ header:
   teaser: "/assets/images/posts/0003-exba-demo/bacon.jpg"
 ---
 
-![The Wall ASCII Art](/assets/images/posts/0003-exba-demo/bacon.jpg)
+![Extra Bacon](/assets/images/posts/0003-exba-demo/bacon.jpg)
 
 _Note: [In this subsequent post]({{ site.baseurl }}{% post_url 2016-08-19-equation-group-crashing-asas-follow-up %}), I explore the DoS possibilities of this vulnerability (crash ASA, ASA requires manual power cycle to recover)_
 

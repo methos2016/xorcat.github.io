@@ -3,10 +3,9 @@ author: XORcat
 comments: true
 date: 2016-09-21 07:05:37+00:00
 layout: single
-slug: macos-sierra-kernel-panic-with-razer-mouse
+slug: macos-sierra-kernel-panic
 title: MacOS Sierra Kernel Panic with Razer Mouse
 excerpt: Damn 3rd party kexts!
-wordpress_id: 392
 categories:
 - Tech
 tags:
@@ -23,7 +22,12 @@ tags:
 - remove razer kext
 - Sierra
 - Synapse
+header:
+  teaser: "/assets/images/posts/0006-macos-sierra-kernel-panic/sad.jpg"
 ---
+
+![Sad Mac](/assets/images/posts/0006-macos-sierra-kernel-panic/sad.jpg)
+
 
 Hey there!
 

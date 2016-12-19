@@ -3,7 +3,7 @@ author: XORcat
 comments: true
 date: 2016-07-31 01:55:59+00:00
 layout: single
-slug: what-i-learned-from-the-wall-part-1
+slug: the-wall-pt1
 title: What I Learned From "The Wall Part 1"
 excerpt: What you can learn without finishing a challenge on your own
 categories:

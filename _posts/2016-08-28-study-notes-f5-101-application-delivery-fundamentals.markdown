@@ -3,10 +3,9 @@ author: XORcat
 comments: true
 date: 2016-08-28 09:42:53+00:00
 layout: single
-slug: study-notes-f5-101-application-delivery-fundamentals
+slug: f5-101-notes
 title: Study Notes - F5 101 - Application Delivery Fundamentals
-excerpt: Let's become certified together!
-wordpress_id: 387
+excerpt: Let's become F5 pros together!
 categories:
 - Networking
 tags:
@@ -19,7 +18,11 @@ tags:
 - f5 certified administrator
 - f5 study guide
 - f5 study notes
+header:
+  teaser: "/assets/images/posts/0005-f5-101-notes/logo.png"
 ---
+
+![F5 Logo](/assets/images/posts/0005-f5-101-notes/logo.png)
 
 Hey guys!
 
@@ -29,7 +32,7 @@ I'm taking the multiple choice exam this week, so hopefully the process of going
 
 After passing the 101 exam, I will be going on to study for the 201 exam (TMOS Administration), which I have been told requires quite a bit more effort. I plan to upload my study notes for the 201 exam as well when they are complete.
 
-These notes are mostly structured around the objectives in the blueprint document, and the content/exam is based on F5 BIG-IP v11.4.<!-- more -->
+These notes are mostly structured around the objectives in the blueprint document, and the content/exam is based on F5 BIG-IP v11.4.
 
 Here's a quick glossary of F5 terminology, in case you're missing some of it:
 
