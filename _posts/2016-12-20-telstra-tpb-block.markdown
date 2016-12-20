@@ -18,6 +18,9 @@ tags:
 - torrenthound
 - isohunt
 - solarmovie
+- bypass
+- dns poison
+- bypass block
 header:
   teaser: "/assets/images/posts/0008-telstra-tpb-block/message.png"
 ---
