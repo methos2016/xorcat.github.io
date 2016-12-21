@@ -9,7 +9,7 @@ I'm an IT worker living in Brisbane. I'm currently working in Networking and Eng
 
 Currently at work, I am working with Cisco equipment, which is my main professional background, however I am studying all kinds of things in my free time, such as *(at the time of writing)*:
 
-*   Malware analysis (reading [Practical Malware Analysis](https://practicalmalwareanalysis.com/)
+*   Malware analysis (reading [Practical Malware Analysis](https://practicalmalwareanalysis.com/))
 *   Penetration testing (working on random CTFs and [Vulnhub](https://vulnhub.com) VMs)
 *   Data science (beginning with [Microsoft's courses on EdX](https://www.edx.org/microsoft-professional-program-certficate-data-science))
 *   General computer science topics (beginning with [MIT's CS50x on EdX](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x))
