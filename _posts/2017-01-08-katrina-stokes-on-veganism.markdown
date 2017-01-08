@@ -40,7 +40,7 @@ There is an entire spectrum of non-animal-based food choices out there, from del
 
 ![Anything you can eat, I can eat vegan](/assets/images/posts/0009-katrina-stokes-on-veganism/anything.jpg)
 
-If you're unsure whether a recipe can be made vegan, google the recipe, and add the word "vegan" at the end. You will find something delicious and animal-free.
+If you're unsure whether a recipe can be made vegan, google the recipe, and add the word "vegan" before or after the search terms. You will find something delicious and animal-free.
 
 ---
 Anyway, moving on.
@@ -108,7 +108,7 @@ B12 supplementation is recommended, not iron, protein, or any other vitamins.
 
 You're right, that we should eat from the five food groups, however there is no "eggs" food group, nor is there a "poultry", "milk" or "yoghurt" food group. No food groups need be neglected on a vegan diet.
 
-![Food groups](/assets/images/posts/0009-katrina-stokes-on-veganism/foodgroups.png)
+![Food groups](/assets/images/posts/0009-katrina-stokes-on-veganism/foodgroups.jpg)
 
 See, every single food group contains options for a vegan diet, even in the pictures. 
 
@@ -118,7 +118,7 @@ Don't make it out like a vegan diet is unhealthy. A vegan diet CAN be unhealthy,
 
 > Then there are the social issues of being vegan. Every friendship group has that one friend who is self-imposed “gluten-free” for absolutely no reason.
 
-**Gluten-free != Vegan**, just so you know.
+**Gluten-free ≠ Vegan**, just so you know.
 
 > Then take veganism, which is about 50 notches above that. You know, that person who orders their meal and says “can I please have the supreme pizza with a gluten- free base, no cheese, no ham, no salami, no anchovies ... and does it contain eggs?!”. What a boring, tasteless existence.
 
@@ -154,7 +154,7 @@ If people weren't so entrenched in their meat-eating ways, every single person o
 
 Again, you can have disgusting, fatty, oily foods without them needing to come from animals.
 
-**Health Nazi != Vegan**
+**Health Nazi ≠ Vegan**
 
 > We only get one life, so why not live it in moderation and live it well.
 
