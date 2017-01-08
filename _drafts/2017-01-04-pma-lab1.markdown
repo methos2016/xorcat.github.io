@@ -1,0 +1,217 @@
+---
+author: XORcat
+comments: true
+date: 2017-01-04 14:25:35+10:00
+layout: single
+slug: pma-lab1-basic-static-techniques
+title: Practical Malware Analysis - Chapter 1 Labs
+excerpt: Basic Static Techniques - Join me as I explain my working through the Practical Malware Analysis labs
+categories:
+- malware
+tags:
+- malware
+- pma
+- practicalmalwareanalysis
+- malware analysis
+- tech
+- security
+- infosec
+header:
+  teaser: "/assets/images/posts/0009-tshooting-waas/web-caching.png"
+---
+
+![Web Caching](/assets/images/posts/0009-tshooting-waas/web-caching.png)
+
+Hey there!
+
+I've been wanting to start learning malware analysis for a while now. 
+
+Recently (November, I'm slow), Amanda ([@malwareunicorn](https://twitter.com/malwareunicorn)) posted a nice little guide titled: [How to Start Reverse Engineering Malware](http://amanda.secured.org/how-to-start-reverse-engineering-malware/). 
+
+One of the books that she recommended was [Practical Malware Analysis: The Hands-On Guide to Dissecting Malicious Software](https://www.nostarch.com/malware.htm) by Andrew Honig and [Michael Sikorski](https://twitter.com/mikesiko), which you can buy as an ebook, or physical copy from the previous link.
+
+So far, I've reached Chapter 11. I've found it easy to read and engaging more or less the entire way through so far. The labs really help cement the ideas that have been taught in a practical way.
+
+In order to further strengthen what I have learned, I figured that I would do some write-ups for the labs that I've been through, trying my best to make them as professional and complete as possible.
+
+---
+
+*As stated in the book, all of these samples can be downloaded from [the PMA website](https://practicalmalwareanalysis.com/labs/).*
+
+*This should go without saying, but the page linked* **CONTAINS LINKS TO MALWARE** *so do not run them, unless you're in a safe environment (purpose-built, segregated and snapshotted virtual machine, described in Chapter 2 of PMA)*
+
+*[PMA]: Practical Malware Analysis
+
+---
+
+# Tools
+In order to perform the below analysis', the following tools were used (or could be useful):
+
+* [VirusTotal](http://www.virustotal.com) - Web-based virus scanner
+* [md5deep](https://github.com/jessek/hashdeep/releases) (part of hashdeep) - Software to compute file checksums (hashes/message digests, whatever you like)
+* [PEiD](https://www.aldeid.com/wiki/PEiD) ([alternative link](http://www.softpedia.com/get/Programming/Packers-Crypters-Protectors/PEiD-updated.shtml)) - Used to detect common packers, cryptors and compilers for PE files
+* [strings](https://technet.microsoft.com/en-us/sysinternals/bb897439) - Scans file(s) for ASCII or UNICODE strings
+* [UPX](https://upx.github.io/) - "Ultimate Packer for eXecutables" - Used to unpack malware which was packed using UPX
+* [Dependency Walker](http://www.dependencywalker.com/) - Shows which modules and functions are imported and exported in a given file
+* [CFF Explorer](http://www.ntcore.com/exsuite.php) - A PE viewer/editor
+* [PEview](http://wjradburn.com/software/) - Another PE viewer
+* [Resource Hacker](http://www.angusj.com/resourcehacker/) - View (and edit) resources inside PE files
+
+Without further ado, let's do this!
+
+# Chapter 1 - Basic Static Techniques
+
+## Lab 01-01
+
+### Overview
+
+Lab 01-01 includes the files named Lab01-01.exe and Lab01-01.dll
+
+### Sample Characteristics
+
+| | [Lab01-01.exe](https://www.virustotal.com/en/file/58898bd42c5bd3bf9b1389f0eee5b39cd59180e8370eb9ea838a0b327bd6fe47/analysis/)  | [Lab01-01.dll](https://www.virustotal.com/en/file/f50e42c8dfaab649bde0398867e930b86c2a599e8db83b8260393082268f2dba/analysis/) |
+|---------------|---------------|--------------|
+| **MD5**       | `bb7425b82141a1c0f7d60e5106676bb1` | `290934c61de9176ad682ffdd65f0a669` |
+| **SHA1**	   | `9dce39ac1bd36d877fdb0025ee88fdaff0627cdb` | `a4b35de71ca20fe776dc72d12fb2886736f43c22` |
+| **SHA256**    | `58898bd42c5bd3bf9b1389f0eee5b39cd59180e8370eb9ea838a0b327bd6fe47` | `f50e42c8dfaab649bde0398867e930b86c2a599e8db83b8260393082268f2dba` |
+| **File Size (bytes)** | 16384| 163840 |
+| **File Type** | PE32 executable (console) Intel 80386, for MS Windows | PE32 executable (DLL) (GUI) Intel 80386, for MS Windows |
+| **VirusTotal Score** | 30 / 56 | 24 / 56 |
+| **Compilation Timestamp** | 2010-12-19 16:16:19 | 2010-12-19 16:16:38 |
+
+### Strings
+
+The following interesting strings were found within the samples:
+
+#### Lab01-01.exe
+
+    FindNextFileA
+    FindFirstFileA
+    CopyFileA
+    kerne132.dll
+    kernel32.dll
+    .exe
+    C:\*
+    C:\windows\system32\kerne132.dll
+    Kernel32.
+    Lab01-01.dll
+    C:\Windows\System32\Kernel32.dll
+    WARNING_THIS_WILL_DESTROY_YOUR_MACHINE
+
+The above strings suggest that the sample is going to copy the file `Lab01-01.dll` somewhere, either overwriting `C:\Windows\System32\Kernel32.dll`, or more likely, naming it `C:\Windows\System32\kerne132.dll` (notice kerne**1**) in order to try and hide.
+
+Also, it was nice of the author to give us a bit of a warning with `WARNING_THIS_WILL_DESTROY_YOUR_MACHINE`... Don't expect to find that in any real-world malware.
+
+#### Lab01-01.dll
+
+    CreateProcessA
+    WS2_32.dll
+    exec
+    sleep
+    hello
+    127.26.152.13
+    SADFHUHF
+
+The strings found in the DLL indicate the following: that network connectivity will likely be utilised (WS2_32.dll)
+
+* Network connectivity will likely be utilised (`WS2_32.dll`)
+    - 127.0.0.0/8 is reserved for local loopback use, as per [RFC 5735](https://tools.ietf.org/html/rfc5735), so `127.26.152.13` indicates that the sample will likely only be talking to itself
+* The DLL will likely create [a] process\[es\] \(`CreateProcessA`/`exec`\)
+* `hello` and `SADFHUHF` don't tell us much at the moment
+
+### Packing
+
+Based on the above strings, it does not appear that either file has been packed or obfuscated.
+
+### Resources
+
+Resource Hacker shows no resources in either of the files.
+
+### Imports
+
+#### Lab01-01.exe
+
+As seen in strings, and confirmed by Dependency Walker, `Lab01-01.exe` imports functionality from `KERNEL32.dll` to copy files (`CopyFileA`), create files (`CreateFileA`), and to find files (`FindFirstFileA`/`FindNextFileA`).
+
+#### Lab01-01.dll
+
+Dependency Walker shows that `WS2_32.DLL` is being used for the following functions (and more)
+
+    connect
+    htons
+    inet_addr
+    recv
+    send
+    
+The above functions equip a program with the functionality required to send and receive data over the network.
+
+As seen in strings, this file also imports functionality from `KERNEL32.dll` to create processes (`CreateProcessA`), mutexes (`CreateMutexA`), and to `sleep`.
+
+### Exports
+
+Neither of these files export any functionality.
+
+### Indicators of Compromise
+
+#### Host-Based
+
+#### Network-Based
+
+---
+
+*Before we go on, if you're only after some documentation for Akamai Connect (because we all know how hard it is to find), here is a link to [Configuring Cisco WAAS with Akamai Connect](https://www.cisco.com/c/en/us/td/docs/app_ntwk_services/waas/waas/v623/configuration/guide/cnfg/akamai-connect.pdf).*
+
+*I'm going to try not to repeat anything that is already easily accessible in documentation I've linked, so if you're after something that I haven't covered, try checking out the documentation.*
+
+---
+
+**Akamai Connect**, however, is a product that has been baked into WAAS for the last few major versions. Akamai Connect works with WAAS to act as an in-branch content cache, with the advantage of using Akamai's "Over the Top" (OTT) delivery technology. Akamai Connect takes advantage of Akamai's partnerships with content providers such as Apple (for app/OS update delivery) and Google (for YouTube video delivery) in order to provide a greater user experience by storing content locally, and serving it directly to the client while it is still fresh.
+
+*[OTT]: Over The Top
+
+Just to be clear, so you know what I've experienced, I have:
+
+* deployed > 300 WAAS devices, all with Akamai Connect;
+* which are all running on VMware ESXi;
+* running WAAS software v5.5.5a;
+* and Internet access is only available via an authenticated proxy.
+
+Akamai Connect doesn't really have much in the way of an interface which the administrator can directly manage the product through. All of the configuration of Akamai Connect is done through WAAS.
+
+_Akamai Connect is a product from Akamai and Cisco. When I say Akamai Connect, I am speaking only of this product, not of everything produced by the CDN Akamai_
+
+## Connectivity to Akamai Connect
+
+### Connecting the WAAS to Akamai Connect
+
+In order to learn Akamai's current OTT rules and to verify your licensing, the WAAS must connect to Akamai's management servers periodically. Until this has occurred successfully at least once, Akamai Connect will be non-functional, and the WAAS will only cache basic HTTP objects, like a Squid cache would.
+
+The WAAS requires connectivity to the host `amg.terra.akamai.com` over SSL/TLS on port `443`.
+
+There is also a requirement for connectivity to an address ending in `.omni.akamaiapis.net` over SSL/TLS on port `443`. This hostname is provided in the Akamai Connect license file that you install to the CM when first configuring and enabling Akamai Connect. As far as I can tell, this host does not change, but I cannot confirm that.
+
+This connectivity does not need to be constant, however, as stated above, Akamai Connect will not do much more than basic object caching until this has succeeded at least once.
+
+Unfortunately as of v6.2, there is still no functionality to configure the WAAS with credentials for it to use with a proxy to access the Akamai AMG server.
+
+My current workaround for this situation is to allow the WAAS Central Manager (CM) direct access through the firewall to anything on `443`, and then configure the edge WAAS to use the CM as a proxy. You could also allow only specific destinatio hosts, however I've found DNS based rules to be unreliable in the past when the destination host uses a dynamic IP address.
+
+### Verifying Connectivity to Akamai Connect
+
+Connectivity to Akamai Connect can be verified with the following command 
+
+### Troubleshooting Connectivity to Akamai Connect
+
+## Other
+
+### Full Disk on CM
+
+Let me know if this helped you. Also let me know if you’ve got an issue that this didn’t assist with and you think I might be able to help further troubleshoot it.
+I’m always around on Twitter [@XORcat](https://twitter.com/xorcat), or on email at [xorcat@riseup.net](mailto:xorcat@riseup.net)
+
+Thanks!
+XORcat
+
+*[AMG]: Akamai Management Gateway
+
+*[CM]: Central Manager
